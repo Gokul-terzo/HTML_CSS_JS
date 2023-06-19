@@ -9,19 +9,35 @@
     cursor: pointer;
     border-radius: 3px;
 }
+.subscribe:hover{
+    opacity: 0.7;
+}
+.subscribe:active{
+    opacity: 0.3;
+}
 .join{
     background-color: white;
     color: blue;
     border: solid blue;
+    border-radius: 2px;
     height: 30px;
     width: 70px;
+    transition: background-color 1s,color 1s; /*Not to be placed inside hover as it will not be applied when we hover out of button*/
+}
+.join:hover{
+    background-color: blue;
+    color: aliceblue;
 }
 .tweet{
-    background-color: blue;
+    background-color: rgb(42, 159, 243);
     border: none;
     border-radius: 30px;
-    height: 30px;
+    height: 40px;
     width: 100px;
     color:aliceblue;
     font-weight: bold;
+    transition: box-shadow 0.5s;
+}
+.tweet:hover{
+    box-shadow: 1px 2px 5px black;  /*right shift,bottom shift, blur, color*/
 }
