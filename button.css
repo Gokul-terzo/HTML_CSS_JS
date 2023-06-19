@@ -1,0 +1,18 @@
+.subscribe{
+    background-color: red;
+    color: antiquewhite;
+    font-size: medium;
+    text-align: center;
+    border: none;
+    height: 30px;
+    width: 100px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+.join{
+    background-color: white;
+    color: blue;
+    border: solid blue;
+    height: 40px;
+    width: 70px;
+}
