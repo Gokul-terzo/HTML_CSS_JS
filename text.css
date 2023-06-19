@@ -21,7 +21,22 @@ margin-bottom: 0px;
 .video-description{
     font-size: 16px;
     width: 300px;
-    margin-bottom: 0px;
+    margin-bottom: 40px;
     color: dimgray;
     line-height: 125%;
+}
+.apple-text{
+    padding: 10px;
+    text-align: center;
+    background-color: rgb(188, 47, 47);
+    color: aliceblue;
+    height: 30px;
+    width: 600px;
+}
+.shop-link:hover{
+    text-decoration: underline;
+}
+.span-example{
+    color: rgb(204, 48, 48);
+    text-decoration: underline;
 }
