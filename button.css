@@ -16,3 +16,12 @@
     height: 30px;
     width: 70px;
 }
+.tweet{
+    background-color: blue;
+    border: none;
+    border-radius: 30px;
+    height: 30px;
+    width: 100px;
+    color:aliceblue;
+    font-weight: bold;
+}
