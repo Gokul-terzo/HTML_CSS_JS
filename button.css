@@ -8,6 +8,7 @@
     width: 100px;
     cursor: pointer;
     border-radius: 3px;
+    margin: 10px 20px 0px 20px;
 }
 .subscribe:hover{
     opacity: 0.7;
@@ -20,8 +21,11 @@
     color: blue;
     border: solid blue;
     border-radius: 2px;
-    height: 30px;
-    width: 70px;
+    min-height: 30px;
+    min-width: 70px;
+    margin-right: 20px;
+    padding: 10px;
+    margin: 20px;
     transition: background-color 1s,color 1s; /*Not to be placed inside hover as it will not be applied when we hover out of button*/
 }
 .join:hover{
