@@ -271,3 +271,10 @@
 .voice-search-img:hover + #voi{
     display: block;
 }
+.content-wrapper{
+    display: flex;
+}
+.l-section{
+    position: fixed;
+    z-index: 200;
+}
