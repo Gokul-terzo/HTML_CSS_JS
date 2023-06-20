@@ -47,7 +47,17 @@ for(let curr=1;curr<tableRows.length;curr++){
        })
 }
 for (let curr = 1; curr < tableRows.length; curr++) {
-    tableRows[curr].addEventListener('click',function(e){
+    tableRows[curr].cells[0].addEventListener('click',function(e){
+        e.preventDefault();
+        console.log(curr);
+        detailedInfo(curr);
+    })
+    tableRows[curr].cells[1].addEventListener('click',function(e){
+        e.preventDefault();
+        console.log(curr);
+        detailedInfo(curr);
+    })
+    tableRows[curr].cells[2].addEventListener('click',function(e){
         e.preventDefault();
         console.log(curr);
         detailedInfo(curr);
