@@ -2,8 +2,12 @@ table{
     border: solid black 1px;
 }
 .user-table{
+    margin-top: 30px;
     display: flex;
     flex-direction: column;
+}
+form{
+    margin-top: 10px;
 }
 tr{
     text-align: center;
@@ -13,4 +17,52 @@ th{
 }
 .delete:hover{
     cursor: pointer;
+}
+button{
+    border: none;
+    border-radius: 5px;
+    min-width: 80px;
+    height: 20px;
+    color: aliceblue;
+    background-color: rgb(234, 31, 31);
+}
+.submit{
+    border: none;
+    border-radius: 5px;
+    min-width: 80px;
+    height: 20px;
+    color: aliceblue;
+    background-color: rgb(28, 192, 115);
+}
+.addEmployee{
+    border: none;
+    border-radius: 5px;
+    min-width: 80px;
+    height: 20px;
+    color: aliceblue;
+    background-color: rgb(22, 154, 230);
+}
+.login{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 300px;
+    gap:10px;
+    align-items: center;
+    justify-content: center;
+}
+.login-btn{
+    border: none;
+    border-radius: 5px;
+    min-width: 80px;
+    height: 20px;
+    color: aliceblue;
+    background-color: rgb(234, 31, 143);
+}
+.login-body{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
 }
