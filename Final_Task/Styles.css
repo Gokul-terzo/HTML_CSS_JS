@@ -1,0 +1,16 @@
+table{
+    border: solid black 1px;
+}
+.user-table{
+    display: flex;
+    flex-direction: column;
+}
+tr{
+    text-align: center;
+}
+th{
+    font-family:Arial, Helvetica, sans-serif;
+}
+.delete:hover{
+    cursor: pointer;
+}
