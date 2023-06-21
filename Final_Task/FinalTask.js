@@ -5,8 +5,9 @@ function CheckUser(){
     if(userName=="Admin" && userPassword=="admin@123")
         window.location.replace("EmployeeDetails.html");
     else
-    alert("Invalid User Details!");
+    document.getElementById("prompt").innerHTML=`<p style="color:red;">Invalid Username or Password!</p>`;
 }
+
 
 var EmployeeDetails=[];
 EmployeeDetails[0]={name:'Gokul',email:'gokul@terzoCloud.com',mobile:'9047569730'};
@@ -16,9 +17,20 @@ EmployeeDetails[1]={name:'Gokul',email:'gokul@gmail.com', mobile:'1234567890'}
 function tableData(){
 console.log(EmployeeDetails);
 let count=window.localStorage.getItem("EmployeeCount");
+let firstTime=localStorage.getItem("firstTime");
+console.log(firstTime);
+if(firstTime=="false"){
+    EmployeeDetails.splice(0,EmployeeDetails.length);
+    for(let i=0;i<count;i++){
+        let Str=localStorage.getItem(`Employee${i}`).split(" ");
+        EmployeeDetails.push({name:Str[0],email:Str[1],mobile:Str[2]});
+        }
+}
+else{
 for(let i=EmployeeDetails.length;i<count;i++){
 let Str=localStorage.getItem(`Employee${i}`).split(" ");
 EmployeeDetails.push({name:Str[0],email:Str[1],mobile:Str[2]});
+}
 }
 let table=`<tr>
 <th>
@@ -76,6 +88,7 @@ for (let curr = 1; curr < tableRows.length; curr++) {
 function deleteEmployee(curr){
     EmployeeDetails.splice(curr-1,1);
     localStorage.clear();
+    localStorage.setItem("firstTime",false);
     localStorage.setItem("EmployeeCount",EmployeeDetails.length);
     for(let i=0;i<EmployeeDetails.length;i++)
     {
@@ -99,17 +112,11 @@ function showDetailedInfo(){
 
 function addEmployee(){
     window.location.replace("AddEmployee.html");
-    firstTime=false;
 }
 
 
 function redirectToEmployeeDetails(){
     window.location.replace("EmployeeDetails.html");
-}
-
-
-function addEmployee(){
-    window.location.replace("AddEmployee.html");
 }
 
 
@@ -130,6 +137,12 @@ function addNewEmployee(){
         alert("Number should be 10 digits")
     }
     if(isCorrect){
+    EmployeeDetails.splice(0,EmployeeDetails.length);
+    let count=localStorage.getItem("EmployeeCount");
+    for(let i=0;i<count;i++){
+        let Str=localStorage.getItem(`Employee${i}`).split(" ");
+        EmployeeDetails.push({name:Str[0],email:Str[1],mobile:Str[2]});
+    }   
     EmployeeDetails.push({name:name,email:email,mobile:number});
     localStorage.setItem("EmployeeCount",EmployeeDetails.length);
     for(let i=0;i<EmployeeDetails.length;i++)
@@ -137,6 +150,7 @@ function addNewEmployee(){
         let empDetails=EmployeeDetails[i].name+" "+EmployeeDetails[i].email+" "+EmployeeDetails[i].mobile;
     localStorage.setItem(`Employee${i}`,empDetails);  
     }
+    alert("User added successfully head back to Employee details to view the table");
 }
 else{
     alert("Re-enter the details");

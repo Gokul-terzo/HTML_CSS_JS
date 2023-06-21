@@ -15,7 +15,7 @@ tr{
 th{
     font-family:Arial, Helvetica, sans-serif;
 }
-.delete:hover{
+#delete:hover{
     cursor: pointer;
 }
 button{
