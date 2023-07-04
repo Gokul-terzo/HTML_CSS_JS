@@ -124,9 +124,14 @@ form {
     padding: 20px;
     max-width: 400px;
     text-align: center;
+    margin-top: 250px;
+    box-shadow: 5px 5px 20px gray;
+    margin-left: 500px;
 }
-
-
+.emp-name-detail{
+    font-weight: bold;
+    font-size: medium;
+}
 .edit-btn,
 .back-btn {
     margin-top: 10px;
