@@ -64,6 +64,7 @@
     width: 55px;
     cursor: pointer;
 }
+
 .emp-name-id{
     padding: 5px;
     display: flex;
@@ -93,7 +94,7 @@ form {
     width: 100%;
 }
 
-.form-control {
+.form-control-custom {
     margin-bottom: 10px;
     padding: 10px;
     width: 95%;
@@ -119,24 +120,28 @@ form {
 }
 
 .emp-detail-body {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
-    background-color: #f2f2f2;
+    border: 1px solid #ccc;
     padding: 20px;
+    max-width: 400px;
+    text-align: center;
 }
 
-.emp-name-detail {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 10px;
+
+.edit-btn,
+.back-btn {
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
 }
 
-.emp-address,.emp-department,.emp-designation,.emp-email{
-    margin-bottom: 5px;
+.edit-btn:hover,
+.back-btn:hover {
+    background-color: #0056b3;
 }
+
 .edit-btn {
     padding: 10px 20px;
     background-color: #4caf50;
@@ -165,4 +170,25 @@ form {
     height: 35px;
     width: 60px;
     cursor: pointer;
+}
+.delete-btn-confirm{
+    margin-top: 10px;
+    border: none;
+    color: aliceblue;
+    background-color: red;
+    border-radius: 5px;
+    height: 35px;
+    width: 60px;
+    cursor: pointer;
+}
+.logout{
+    cursor: pointer;
+    font-size: medium;
+    margin-left: 75%;
+    border: none;
+    color: aliceblue;
+    background-color: red;
+    border-radius: 8px;
+    height: 35px;
+    width: 100px;
 }

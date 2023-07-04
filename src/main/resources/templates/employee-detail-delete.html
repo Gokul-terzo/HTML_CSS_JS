@@ -12,7 +12,7 @@
 <p class="emp-department" th:text="${employee.department}"></p>
 <p class="emp-email" th:text="${employee.email}"></p>
 <p class="emp-address" th:text="${employee.address}"></p>
-<a  th:href="@{/employee/{empId}/confirm/delete(empId=${employee.id})}"><button class="delete-btn">Delete</button></a>
+<a  th:href="@{/employee/{empId}/confirm/delete(empId=${employee.id})}"><button class="delete-btn-confirm">Delete</button></a>
 <a th:href="@{/employees}"><button class="back-btn">Back</button></a>
 </body>
 </html>

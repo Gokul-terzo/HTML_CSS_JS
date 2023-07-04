@@ -2,6 +2,9 @@ package com.example.springMVC.controller;
 
 import com.example.springMVC.dto.EmployeeDto;
 import com.example.springMVC.models.Employee;
+import com.example.springMVC.models.UserEntity;
+import com.example.springMVC.repository.UserRepository;
+import com.example.springMVC.security.SecurityUtil;
 import com.example.springMVC.service.EmployeeService;
 import jakarta.persistence.Table;
 import jakarta.validation.Valid;
@@ -19,14 +22,19 @@ import java.util.List;
 @Controller
 public class EmployeeController {
     private EmployeeService employeeService;
+    private UserRepository userRepository;
 
     @Autowired
-    public EmployeeController(EmployeeService employeeService) {
+    public EmployeeController(EmployeeService employeeService,UserRepository userRepository) {
         this.employeeService = employeeService;
+        this.userRepository=userRepository;
     }
 
     @GetMapping("/employees")
     public String employeesList(Model model){
+        String username= SecurityUtil.getSessionUser();
+        if(username==null)
+            return "redirect:/login";
         List<EmployeeDto> employees=employeeService.findAllEmployees();
         model.addAttribute("employees",employees);
         return "employee-list";
@@ -35,6 +43,9 @@ public class EmployeeController {
     @GetMapping("/employee/new")
     public String newEmployee(Model model){
         Employee employee=new Employee();
+        String username= SecurityUtil.getSessionUser();
+        if(username==null)
+            return "redirect:/login";
         model.addAttribute("employee",employee);
         return "employee-new";
     }
@@ -51,6 +62,9 @@ public class EmployeeController {
 
     @GetMapping("/employee/{empId}/delete")
     public String deleteClub(@PathVariable("empId") int empId,Model model){
+        String username= SecurityUtil.getSessionUser();
+        if(username==null)
+            return "redirect:/login";
         EmployeeDto employeeDto=employeeService.findEmployeeById(empId);
         model.addAttribute("employee",employeeDto);
         return "employee-detail-delete";
@@ -58,12 +72,18 @@ public class EmployeeController {
 
     @GetMapping("/employee/{empId}/confirm/delete")
     public String deleteClubConfirm(@PathVariable("empId") int empId,Model model){
+        String username= SecurityUtil.getSessionUser();
+        if(username==null)
+            return "redirect:/login";
         employeeService.delete(empId);
         return "redirect:/employees";
     }
 
     @GetMapping("/employee/{empId}/view")
     public String viewEmployee(@PathVariable("empId") int empId,Model model){
+        String username= SecurityUtil.getSessionUser();
+        if(username==null)
+            return "redirect:/login";
        EmployeeDto employeeDto=employeeService.findEmployeeById(empId);
        model.addAttribute("employee",employeeDto);
        return "employee-detail";
@@ -71,6 +91,9 @@ public class EmployeeController {
 
     @GetMapping("/employee/{empId}/edit")
     public String editEmployeeForm(@PathVariable("empId") int empId,Model model){
+        String username= SecurityUtil.getSessionUser();
+        if(username==null)
+            return "redirect:/login";
         EmployeeDto employeeDto=employeeService.findEmployeeById(empId);
         model.addAttribute("employee",employeeDto);
         return "employee-edit";
