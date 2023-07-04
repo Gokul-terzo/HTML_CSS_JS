@@ -4,9 +4,11 @@ import com.example.springMVC.dto.EmployeeDto;
 import com.example.springMVC.models.Employee;
 import com.example.springMVC.service.EmployeeService;
 import jakarta.persistence.Table;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -38,7 +40,11 @@ public class EmployeeController {
     }
 
     @PostMapping("/employee/new")
-    public String newEmployeeCreate(Model model,@ModelAttribute("employee") EmployeeDto employeeDto){
+    public String newEmployeeCreate(Model model, @Valid @ModelAttribute("employee") EmployeeDto employeeDto, BindingResult result){
+        if(result.hasErrors()){
+         model.addAttribute("employee",employeeDto);
+         return "employee-new";
+        }
         employeeService.saveEmployee(employeeDto);
         return "redirect:/employees";
     }
@@ -71,7 +77,12 @@ public class EmployeeController {
     }
 
     @PostMapping("/employee/{empId}/edit")
-    public String editEmployee(@PathVariable("empId") int empId,@ModelAttribute("club") EmployeeDto employeeDto) {
+    public String editEmployee(@PathVariable("empId") int empId,@Valid @ModelAttribute("employee") EmployeeDto employeeDto,BindingResult
+                             result,Model model  ) {
+        if(result.hasErrors()){
+            model.addAttribute("employee",employeeDto);
+            return "employee-edit";
+        }
         employeeDto.setId(empId);
         employeeService.saveEmployee(employeeDto);
         return "redirect:/employees";

@@ -21,6 +21,5 @@ public class EmployeeDto {
     private String address;
     @NotEmpty(message = "Employee department is a mandatory field!")
     private String department;
-    @NotEmpty(message = "Employee mobile number is a mandatory field!")
     private long mobile;
 }
