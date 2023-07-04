@@ -5,7 +5,8 @@
   <title>Add employee</title>
   <link rel="stylesheet" th:href="@{/css/styles.css}" >
 </head>
-<body>
+<body class="form-body">
+<h1 class="form-header">Edit Employee</h1>
 <form th:action="@{/employee/{empId}/edit(empId=${employee.id})}" method="post" th:object="${employee}">
   <label class="form-control-1" for="name">Id</label>
   <input type="text" class="form-control-1" id="id" placeholder="ID" th:field="*{id}" name="id">

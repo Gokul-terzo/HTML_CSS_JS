@@ -6,15 +6,22 @@
     <link rel="stylesheet" th:href="@{/css/styles.css}" >
 </head>
 <body>
-<h1>Employees List</h1>
+<h1 class="page-title">Employees List</h1>
 <a th:href="@{/employee/new}"><button class="add-emp">Add Employee</button></a>
+<div class="emp-cards-area">
 <div class="emp-card" th:each="employee: ${employees}">
     <div class="emp-card-holder">
-    <div class="emp-name" th:text="${employee.id}"></div>
-    <div class="emp-id" th:text="${employee.name}" ></div>
-        <a  th:href="@{/employee/{empId}/view(empId=${employee.id})}"><button>View</button></a>
-        <a  th:href="@{/employee/{empId}/delete(empId=${employee.id})}"><button>Delete</button></a>
+        <div class="emp-logo">
+            <img src="https://www.pngitem.com/pimgs/m/22-224000_profile-pic-dummy-png-transparent-png.png" width="180px" height="200px">
+        </div>
+    <div class="emp-name" th:text="${employee.name}"></div>
+    <div class="emp-desig" th:text="${employee.designation}" ></div>
+        <div class="card-buttons">
+        <a  th:href="@{/employee/{empId}/view(empId=${employee.id})}"><button class="view-btn">View</button></a>
+        <a  th:href="@{/employee/{empId}/delete(empId=${employee.id})}"><button class="delete-btn">Delete</button></a>
+        </div>
     </div>
+</div>
 </div>
 </body>
 </html>

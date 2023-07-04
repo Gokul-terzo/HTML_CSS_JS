@@ -1,12 +1,68 @@
-.emp-card{
-    background-color: aquamarine;
-    display: flex;
-    width: 80px;
-    min-height: 50px;
-    margin: 10px;
+*{
+    font-family: "Gill Sans";
 }
-.emp-name,.emp-id{
+.page-title{
+    color: gray;
+    text-align: center;
+}
+.emp-cards-area{
     display: flex;
+    flex-flow: row wrap;
+}
+.add-emp{
+    cursor: pointer;
+    font-size: medium;
+    margin-left: 40px;
+    border: none;
+    color: aliceblue;
+    background-color: blue;
+    border-radius: 8px;
+    height: 35px;
+    width: 120px;
+}
+.emp-card{
+    border: 0.2px solid black;
+    box-shadow: 5px 5px 10px black;
+    border-radius: 10px;
+    display: flex;
+    width: 200px;
+    height: 280px;
+    margin: 30px;
+    gap: 5px;
+    align-content: center;
+    justify-content: center;
+    padding: 5px;
+}
+.emp-name{
+    font-weight: bold;
+}
+.emp-name,.emp-desig,.emp-logo{
+    display: flex;
+    justify-content: center;
+}
+.card-buttons{
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+    gap:50px;
+}
+.view-btn{
+    border: none;
+    color: aliceblue;
+    background-color: limegreen;
+    border-radius: 5px;
+    height: 25px;
+    width: 55px;
+    cursor: pointer;
+}
+.delete-btn{
+    border: none;
+    color: aliceblue;
+    background-color: red;
+    border-radius: 5px;
+    height: 25px;
+    width: 55px;
+    cursor: pointer;
 }
 .emp-name-id{
     padding: 5px;
@@ -15,4 +71,98 @@
 }
 .form-control-1{
     display: none;
+}
+.form-body {
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f1f1f1;
+    font-family: Arial, sans-serif;
+}
+.form-header{
+    color: gray;
+}
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+}
+
+.form-control {
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 95%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.text-danger {
+    color: red;
+}
+
+.submit-btn {
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: #45a049;
+}
+
+.emp-detail-body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+.emp-name-detail {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.emp-address,.emp-department,.emp-designation,.emp-email{
+    margin-bottom: 5px;
+}
+.edit-btn {
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.edit-btn:hover {
+    background-color: #45a049;
+}
+
+.delete-warn-msg{
+    color: red;
+    font-size: medium;
+    font-weight: bold;
+}
+
+.back-btn{
+    margin-top: 10px;
+    border: none;
+    color: aliceblue;
+    background-color: blue;
+    border-radius: 5px;
+    height: 35px;
+    width: 60px;
+    cursor: pointer;
 }
