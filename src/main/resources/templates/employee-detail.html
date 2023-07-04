@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Detail</title>
+</head>
+<body th:object="${employee}">
+    <p th:text="${employee.id}"></p>
+    <p th:text="${employee.name}"></p>
+    <p th:text="${employee.address}"></p>
+    <p th:text="${employee.department}"></p>
+    <p th:text="${employee.designation}"></p>
+    <p th:text="${employee.email}"></p>
+    <a  th:href="@{/employee/{empId}/edit(empId=${employee.id})}"><button>Edit</button></a>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add employee</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" >
+</head>
+<body>
+    <form th:action="@{/employee/new}" method="post" th:object="${employee}">
+
+        <label class="form-control-1" for="name">Id</label>
+        <input type="text" class="form-control-1" id="id" placeholder="ID" th:field="*{id}" name="id">
+        <p th:if="${#fields.hasErrors('content')}" class="text-danger" th:errors="*{content}"></p>
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" placeholder="Name" th:field="*{name}" name="name">
+        <p th:if="${#fields.hasErrors('content')}" class="text-danger" th:errors="*{content}"></p>
+        <label for="email">E-mail</label>
+        <input type="email" class="form-control" id="email" placeholder="E-mail" th:field="*{email}" name="email">
+        <p th:if="${#fields.hasErrors('content')}" class="text-danger" th:errors="*{content}"></p>
+        <label for="mobile">Mobile</label>
+        <input type="number" class="form-control" id="mobile" placeholder="Mobile No:" th:field="*{mobile}" name="mobile">
+        <p th:if="${#fields.hasErrors('content')}" class="text-danger" th:errors="*{content}"></p>
+        <label for="address">Address</label>
+        <input type="text" class="form-control" id="address" placeholder="Address" th:field="*{address}" name="title">
+        <p th:if="${#fields.hasErrors('content')}" class="text-danger" th:errors="*{content}"></p>
+        <label for="designation">Designation</label>
+        <input type="text" class="form-control" id="designation" placeholder="Designation" th:field="*{designation}" name="title">
+        <p th:if="${#fields.hasErrors('content')}" class="text-danger" th:errors="*{content}"></p>
+        <label for="department">Department</label>
+        <input type="text" class="form-control" id="department" placeholder="Department" th:field="*{department}" name="title">
+        <p th:if="${#fields.hasErrors('content')}" class="text-danger" th:errors="*{content}"></p>
+        <button type="submit" class="submit-btn">Submit</button>
+    </form>
+</body>
+</html>

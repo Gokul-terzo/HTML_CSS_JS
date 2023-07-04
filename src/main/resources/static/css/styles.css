@@ -1,0 +1,18 @@
+.emp-card{
+    background-color: aquamarine;
+    display: flex;
+    width: 80px;
+    min-height: 50px;
+    margin: 10px;
+}
+.emp-name,.emp-id{
+    display: flex;
+}
+.emp-name-id{
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+}
+.form-control-1{
+    display: none;
+}

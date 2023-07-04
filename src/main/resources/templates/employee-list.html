@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" >
+</head>
+<body>
+<h1>Employees List</h1>
+<a th:href="@{/employee/new}"><button class="add-emp">Add Employee</button></a>
+<div class="emp-card" th:each="employee: ${employees}">
+    <div class="emp-card-holder">
+    <div class="emp-name" th:text="${employee.id}"></div>
+    <div class="emp-id" th:text="${employee.name}" ></div>
+        <a  th:href="@{/employee/{empId}/view(empId=${employee.id})}"><button>View</button></a>
+        <a  th:href="@{/employee/{empId}/delete(empId=${employee.id})}"><button>Delete</button></a>
+    </div>
+</div>
+</body>
+</html>
